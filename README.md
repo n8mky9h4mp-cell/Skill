@@ -40,7 +40,9 @@ npx skills list -g
 | [`agnes-image`](./skills/agnes-image/SKILL.md) | Agnes Image 文生图 / 图生图 | [API](./skills/agnes-image/references/api.md) |
 | [`agnes-video`](./skills/agnes-video/SKILL.md) | Agnes Video 文生 / 图生 / 关键帧 | [API](./skills/agnes-video/references/api.md) |
 | [`dingtalk-log`](./skills/dingtalk-log/SKILL.md) | 口语任务润色为钉钉工作日志 | [说明](./skills/dingtalk-log/references/usage.md) |
-| [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
+| [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章，生成可复制的 HTML 富文本预览 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
+
+`write-wechat-articles` 会为每篇文章生成 `article.md`、`wechat.md`、`wechat.html` 和 `assets.md`。打开 `wechat.html`，点击“复制到公众号”后可直接粘贴到微信公众号编辑器。
 
 新建 Skill：复制 [`skills/_template/`](./skills/_template/SKILL.md)（`metadata.internal: true`，不会被一键安装）。
 

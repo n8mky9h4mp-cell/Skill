@@ -1,5 +1,7 @@
 # `write-wechat-articles` Skill 设计
 
+> 后续已增加 HTML 源码与富文本复制预览，见 [微信公众号 HTML 富文本交付设计](2026-07-31-write-wechat-html-copy-design.md)。
+
 ## 目标
 
 创建一个面向中文技术与 AI 创作实践公众号的写作 Skill。它帮助开发者和 AI 创作者把主题、资料、提示词或草稿整理成简洁、可靠、适合手机阅读的公众号文章。

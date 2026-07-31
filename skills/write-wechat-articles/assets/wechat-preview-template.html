@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章预览</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef2f6;
+      color: #29323d;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 16px;
+      border-bottom: 1px solid #dce3eb;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(100%, 677px);
+      margin: 0 auto;
+    }
+
+    .toolbar-copy {
+      flex: none;
+      min-height: 40px;
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 6px;
+      background: #246ba5;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .toolbar-copy:focus-visible {
+      outline: 3px solid rgba(36, 107, 165, 0.28);
+      outline-offset: 2px;
+    }
+
+    .toolbar-status {
+      margin: 0;
+      color: #536273;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .preview-shell {
+      width: min(calc(100% - 24px), 725px);
+      margin: 24px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 12px 34px rgba(37, 55, 76, 0.08);
+    }
+
+    @media (max-width: 560px) {
+      .toolbar-inner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .toolbar-status {
+        text-align: left;
+      }
+
+      .preview-shell {
+        width: 100%;
+        margin: 0;
+        padding: 16px 12px;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-inner">
+      <button class="toolbar-copy" id="copy-button" type="button">复制到公众号</button>
+      <p class="toolbar-status" id="copy-status" role="status" aria-live="polite">复制后直接粘贴到微信公众号编辑器</p>
+    </div>
+  </header>
+
+  <main class="preview-shell">
+    {{ARTICLE_HTML}}
+  </main>
+
+  <script>
+    const article = document.querySelector("#wechat-article");
+    const button = document.querySelector("#copy-button");
+    const status = document.querySelector("#copy-status");
+
+    function selectArticle() {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNode(article);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      return selection;
+    }
+
+    function setStatus(message) {
+      status.textContent = message;
+    }
+
+    async function copyArticle() {
+      if (!article) {
+        setStatus("未找到文章内容，请检查模板占位符");
+        return;
+      }
+
+      const html = article.outerHTML;
+      const plain = article.innerText;
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        try {
+          const item = new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plain], { type: "text/plain" })
+          });
+          await navigator.clipboard.write([item]);
+          setStatus("已复制，可直接粘贴到微信公众号编辑器");
+          return;
+        } catch (error) {
+          // 本地文件或浏览器权限可能阻止 Clipboard API，继续兼容复制。
+        }
+      }
+
+      const selection = selectArticle();
+
+      try {
+        if (document.execCommand("copy")) {
+          selection.removeAllRanges();
+          setStatus("已复制，可直接粘贴到微信公众号编辑器");
+          return;
+        }
+      } catch (error) {
+        // 保留选区，方便用户手动复制。
+      }
+
+      setStatus("浏览器未允许自动复制，文章已选中，请按 Ctrl/Cmd+C");
+    }
+
+    button.addEventListener("click", copyArticle);
+  </script>
+</body>
+</html>

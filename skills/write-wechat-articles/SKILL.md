@@ -1,6 +1,6 @@
 ---
 name: write-wechat-articles
-description: 为中文微信公众号撰写、改写和润色简洁的技术与 AI 创作实践文章。用户要求写公众号文章、技术教程、原理分析、故障复盘、工具或 AI 产品评测、AI 漫剧/视频/音乐工作流、提示词分享，或把笔记、代码、日志、链接和草稿整理成公众号稿时使用。默认主动检索一手资料，将 Markdown 原稿、公众号排版稿和素材说明自动保存到当前工作区。
+description: 为中文微信公众号撰写、改写和润色简洁的技术与 AI 创作实践文章。用户要求写公众号文章、技术教程、原理分析、故障复盘、工具或 AI 产品评测、AI 漫剧/视频/音乐工作流、提示词分享，或把笔记、代码、日志、链接和草稿整理成公众号稿时使用。默认主动检索一手资料，将 Markdown 原稿、可复制的 HTML 源码、公众号富文本预览页和素材说明自动保存到当前工作区。
 ---
 
 # 微信公众号文章写作
@@ -13,6 +13,7 @@ description: 为中文微信公众号撰写、改写和润色简洁的技术与 
 2. 读取 [references/wechat-formatting.md](references/wechat-formatting.md)，确定交付与图片格式。
 3. 新写或补充事实性内容时，读取 [references/research-policy.md](references/research-policy.md)。
 4. 完稿后读取 [references/quality-checklist.md](references/quality-checklist.md)，执行最多两轮压缩与核验。
+5. 生成 `wechat.html` 时，以 [assets/wechat-preview-template.html](assets/wechat-preview-template.html) 为页面外壳，不重新设计复制逻辑。
 
 ## 默认受众与口吻
 
@@ -33,8 +34,9 @@ description: 为中文微信公众号撰写、改写和润色简洁的技术与 
 7. 核验事实、版本、模型、平台、参数、代码行为和引用。
 8. 删除重复解释、空泛过渡、常识性展开和总结式复述。
 9. 判断图片是否真正帮助解释、证明或比较内容，只为必要图片设置占位。
-10. 按规定格式生成三个文件，并用质量清单检查。最多修订两轮。
-11. 将文章自动保存到当前工作区，再返回摘要、文件链接和校验结果。
+10. 先生成唯一的文章 HTML 片段，再由它生成 `wechat.md` 和 `wechat.html`。
+11. 按规定格式生成四个文件，并用质量清单检查。最多修订两轮。
+12. 将文章自动保存到当前工作区，再返回摘要、文件链接和校验结果。
 
 ## 提示词处理
 
@@ -60,17 +62,20 @@ description: 为中文微信公众号撰写、改写和润色简洁的技术与 
 【配图 01｜用途｜建议比例｜替换为公众号素材库图片】
 ```
 
-保持 Markdown 原稿、公众号排版稿和配图清单的编号与位置一致。
+保持 Markdown 原稿、HTML 源码、预览页和配图清单的编号与位置一致。
 
 ## 默认交付
 
 文章通过质量检查后，默认保存到当前工作区的 `articles/YYYY-MM-DD-短标题/`：
 
 - `article.md`：3 个标题候选、60-100 字摘要、Markdown 正文和参考资料
-- `wechat.md`：内容一致的公众号排版稿和 1 句文末互动语
+- `wechat.md`：简短说明和一个包含完整文章片段的 `html` 代码块
+- `wechat.html`：可独立打开的排版预览页，提供“复制到公众号”按钮
 - `assets.md`：封面图提示词、必要的配图清单和素材库替换说明
 
-保存成功后，只返回简短摘要、三个可点击文件链接和校验结果，不在对话中重复全文。具体命名、冲突处理和失败回退遵循 [references/wechat-formatting.md](references/wechat-formatting.md)。
+`wechat.md` 与 `wechat.html` 必须来自同一个文章 HTML 片段，不得分别改写。正文样式全部使用行内 CSS，复制内容不得包含预览页按钮、说明或脚本。
+
+保存成功后，只返回简短摘要、四个可点击文件链接和校验结果，不在对话中重复全文。具体命名、HTML 结构、复制逻辑、冲突处理和失败回退遵循 [references/wechat-formatting.md](references/wechat-formatting.md)。
 
 不要输出写作过程、长篇资料综述或逐条写作解释。用户指定交付范围或路径时，以用户要求为准。
 
