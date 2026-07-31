@@ -7,7 +7,7 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Spec-6366F1?style=for-the-badge&logo=openai&logoColor=white)](https://agentskills.io)
 [![Skills CLI](https://img.shields.io/badge/CLI-npx%20skills-0EA5E9?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-5-F59E0B?style=for-the-badge)](./skills/)
+[![Skills](https://img.shields.io/badge/Skills-6-F59E0B?style=for-the-badge)](./skills/)
 [![llms.txt](https://img.shields.io/badge/llms.txt-Navigation-64748B?style=for-the-badge)](./llms.txt)
 [![Stars](https://img.shields.io/github/stars/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Stars&color=181717)](https://github.com/xiongxianzhu/xskills/stargazers)
 [![Forks](https://img.shields.io/github/forks/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Forks&color=181717)](https://github.com/xiongxianzhu/xskills/forks)
@@ -25,10 +25,11 @@
 ```bash
 npx skills add xiongxianzhu/xskills --list
 npx skills add xiongxianzhu/xskills --skill api-docs -g -y
+npx skills add xiongxianzhu/xskills --skill write-wechat-articles -g -y
 npx skills list -g
 ```
 
-安装后在对话中说「按 api-docs 规范写接口文档」即可触发技能。更多安装场景见下节。
+安装后在对话中说「按 api-docs 规范写接口文档」或「写一篇 AI 音乐公众号文章」即可触发对应技能。更多安装场景见下节。
 
 ## 本仓库技能
 
@@ -39,6 +40,7 @@ npx skills list -g
 | [`agnes-image`](./skills/agnes-image/SKILL.md) | Agnes Image 文生图 / 图生图 | [API](./skills/agnes-image/references/api.md) |
 | [`agnes-video`](./skills/agnes-video/SKILL.md) | Agnes Video 文生 / 图生 / 关键帧 | [API](./skills/agnes-video/references/api.md) |
 | [`dingtalk-log`](./skills/dingtalk-log/SKILL.md) | 口语任务润色为钉钉工作日志 | [说明](./skills/dingtalk-log/references/usage.md) |
+| [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
 
 新建 Skill：复制 [`skills/_template/`](./skills/_template/SKILL.md)（`metadata.internal: true`，不会被一键安装）。
 
@@ -84,6 +86,7 @@ npx skills list -g
 | [brainstorming](https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md) | 写代码前先澄清需求、对比方案、确认设计（Superpowers 入口） |
 | [hatch-pet](https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md) | 创建、修复、校验并打包 Codex 动画宠物与精灵图 |
 | [jianying-editor](https://github.com/luoluoluo22/jianying-editor-skill) | 剪映 AI 自动化剪辑（录屏、字幕、Web 动效、导出） |
+| [impeccable](https://skills.sh/pbakaus/impeccable/impeccable) | 生产级前端界面，避免通用 AI slop 美学 |
 
 ```bash
 npx skills add anthropics/skills --skill frontend-design -g -y
@@ -106,6 +109,7 @@ npx skills add multica-ai/andrej-karpathy-skills --skill karpathy-guidelines -g 
 npx skills add obra/superpowers --skill brainstorming -g -y
 npx skills add openai/skills --skill hatch-pet -g -y
 npx skills add luoluoluo22/jianying-editor-skill --skill jianying-editor -g -y
+npx skills add pbakaus/impeccable@impeccable -g -y
 ```
 
 ## 故障排查
