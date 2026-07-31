@@ -78,7 +78,7 @@
 文章通过质量检查后，保存到执行任务时的当前工作区：
 
 ```text
-articles/
+微信公众号文章/
 └── YYYY-MM-DD-短标题/
     ├── article.md
     ├── wechat.md

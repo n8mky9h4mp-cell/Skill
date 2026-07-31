@@ -54,7 +54,7 @@
 
 ## 保存
 
-- [ ] 已在当前工作区的 `articles/` 下创建日期与短标题目录
+- [ ] 已在当前工作区的 `微信公众号文章/` 下创建日期与短标题目录
 - [ ] `article.md`、`wechat.md`、`wechat.html` 和 `assets.md` 职责清楚、内容完整
 - [ ] `wechat.html` 可独立打开，不依赖网络资源
 - [ ] 模板中的 `{{ARTICLE_HTML}}` 已完整替换

@@ -42,7 +42,7 @@ npx skills list -g
 | [`dingtalk-log`](./skills/dingtalk-log/SKILL.md) | 口语任务润色为钉钉工作日志 | [说明](./skills/dingtalk-log/references/usage.md) |
 | [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章，生成可复制的 HTML 富文本预览 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
 
-`write-wechat-articles` 会为每篇文章生成 `article.md`、`wechat.md`、`wechat.html` 和 `assets.md`。打开 `wechat.html`，点击“复制到公众号”后可直接粘贴到微信公众号编辑器。
+`write-wechat-articles` 会将文章保存到 `微信公众号文章/YYYY-MM-DD-短标题/`，并生成 `article.md`、`wechat.md`、`wechat.html` 和 `assets.md`。打开 `wechat.html`，点击“复制到公众号”后可直接粘贴到微信公众号编辑器。
 
 新建 Skill：复制 [`skills/_template/`](./skills/_template/SKILL.md)（`metadata.internal: true`，不会被一键安装）。
 
