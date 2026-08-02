@@ -24,7 +24,8 @@ compatibility: 需要可读写的项目工作区；趋势、平台规则和合�
 1. 提取用户给出的主题、目标平台、引擎版本和已有项目路径。
 2. 用户说“微信小程序游戏”时，按 [references/project-readiness-and-compliance.md](references/project-readiness-and-compliance.md) 判断其目标是否实际为微信小游戏。
 3. 只读检查现有项目结构、Cocos 版本、未提交修改和可用工具。保留用户已有改动。
-4. 新项目默认以 Cocos Creator 3.8+、TypeScript、2D、微信与抖音双端为基线。
+4. 新项目完整阅读 [references/project-structure.md](references/project-structure.md)，默认使用单仓库：`client/` 承载完整 Cocos 项目，`docs/game/` 承载文档，可选目录按启用条件创建。
+5. 新项目默认以 Cocos Creator 3.8+、TypeScript、2D、微信与抖音双端为基线。
 
 ### 阶段 1：联网调研与玩法提案
 
@@ -43,6 +44,7 @@ compatibility: 需要可读写的项目工作区；趋势、平台规则和合�
 用户选定玩法后，完整阅读：
 
 - [references/project-readiness-and-compliance.md](references/project-readiness-and-compliance.md)
+- [references/project-structure.md](references/project-structure.md)
 - [references/prd-template.md](references/prd-template.md)
 - [references/project-planning.md](references/project-planning.md)
 - 需要后端判断时读取 [references/backend-and-data.md](references/backend-and-data.md)
@@ -56,7 +58,7 @@ docs/game/
 └── tasks.md
 ```
 
-PRD 必须包含技术栈和目标项目目录树。三份文档使用一致的功能名称、路径、范围与完成条件。
+PRD 必须包含技术栈和按标准裁剪后的目标项目目录树。三份文档使用一致的功能名称、路径、范围与完成条件，不为未批准能力预建 `server/`、`shared/`、`tools/` 或资源分包目录。
 
 **门槛 2：等待用户批准三份文档。未批准前，不创建或修改游戏代码和资源。**
 
@@ -64,7 +66,7 @@ PRD 必须包含技术栈和目标项目目录树。三份文档使用一致的�
 
 文档获批后：
 
-1. 完整阅读 [references/cocos-architecture.md](references/cocos-architecture.md)。
+1. 完整阅读 [references/project-structure.md](references/project-structure.md) 与 [references/cocos-architecture.md](references/cocos-architecture.md)。
 2. 从 `tasks.md` 选择一个最小、无阻塞任务，标记为进行中。
 3. 实现可重复游玩的闭环：启动、进入、核心操作、成功或失败、结算、再次开始。
 4. 每完成一个任务就验证产物，并同步更新 `progress.md` 与 `tasks.md`。

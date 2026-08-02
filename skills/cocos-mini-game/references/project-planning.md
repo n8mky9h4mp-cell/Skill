@@ -64,7 +64,9 @@ docs/game/
 ## 拆分原则
 
 - 一个任务只产生一个可验证结果，避免“完成整个游戏”。
-- 任务路径必须存在于 PRD 批准的目录结构中。
+- 任务路径必须存在于 PRD 批准的实际目录结构中，并符合 [project-structure.md](project-structure.md) 的职责边界。
+- 创建 `server/`、`shared/`、`tools/`、`bundles/` 或其他条件目录必须作为显式任务，写明对应 PRD 决策和启用条件；不得顺手预建。
+- 新建文件任务使用从仓库根目录开始的精确路径，例如 `client/assets/scripts/game/PlayerController.ts`。
 - 每次最多一个任务处于进行中。
 - 外部账号或真机阻塞与代码任务分开，避免阻塞全部开发。
 - 完成后立即记录实际产物和验证证据，再领取下一项。

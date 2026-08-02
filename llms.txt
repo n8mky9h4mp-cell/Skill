@@ -39,6 +39,7 @@
 - [小游戏项目准备与合规](skills/cocos-mini-game/references/project-readiness-and-compliance.md): 双端账号、工具、当前规则、授权与秘密管理检查
 - [双端小游戏 PRD 模板](skills/cocos-mini-game/references/prd-template.md): 产品、技术栈、目录结构、IAA、平台能力与验收必填结构
 - [小游戏开发计划](skills/cocos-mini-game/references/project-planning.md): `progress.md` 与 `tasks.md` 的状态、依赖和验证格式
+- [小游戏项目目录规范](skills/cocos-mini-game/references/project-structure.md): 单仓库边界、Cocos 客户端结构、按需目录、命名与版本控制规则
 - [Cocos 2D 项目架构](skills/cocos-mini-game/references/cocos-architecture.md): 场景、脚本、资源、纯逻辑与 Web Mobile 预览边界
 - [小游戏后端决策](skills/cocos-mini-game/references/backend-and-data.md): 纯客户端默认、后端启用门槛与可信数据原则
 - [双端平台适配](skills/cocos-mini-game/references/platform-adapter.md): 微信、抖音和编辑器模拟的统一接口与错误语义

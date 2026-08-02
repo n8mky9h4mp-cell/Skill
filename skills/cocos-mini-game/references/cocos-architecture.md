@@ -2,27 +2,18 @@
 
 ## 先检查再创建
 
-现有项目先读取 `package.json`、`settings/`、`assets/`、场景、脚本和版本控制状态。匹配现有命名与目录，不重排无关文件。没有项目时才创建最小 Cocos Creator 3.8+ TypeScript 结构。
+现有项目先定位真实的 Cocos 项目根目录，再读取其中的 `package.json`、`settings/`、`assets/`、场景、脚本和版本控制状态；标准新项目的根目录是 `client/`。匹配现有命名与目录，不重排无关文件。没有项目时才创建最小 Cocos Creator 3.8+ TypeScript 结构。
 
-## 推荐职责边界
+## 目录与依赖边界
 
-```text
-assets/
-├── scenes/                 # 启动、主界面、游戏、结算等场景
-├── scripts/
-│   ├── core/               # 纯逻辑、状态机、数值和通用事件
-│   ├── game/               # 当前玩法组件与规则
-│   ├── ui/                 # 界面组件和交互
-│   ├── platform/           # 统一接口、环境选择和平台实现
-│   ├── services/           # 存档、配置、资源等项目服务
-│   └── config/             # 类型化配置与常量
-├── prefabs/                # 可复用节点与 UI 预制体
-├── textures/               # 图片、图集和字体资源
-├── audio/                  # 用户生成后接入的音效和 BGM
-└── bundles/                # 仅在 PRD 需要时使用 Asset Bundle
-```
+完整仓库结构、资源目录、命名和版本控制规则以 [project-structure.md](project-structure.md) 为准。本文件只补充运行架构：
 
-这只是新项目起点。PRD 必须给出项目实际目录树，未使用的目录不要创建。
+- `core/` 不依赖具体题材、UI 或平台实现。
+- `game/` 组合纯逻辑与 Cocos 组件，通过接口调用 `services/` 和 `platform/`。
+- `ui/` 订阅游戏状态并发送用户意图，不复制胜负、奖励或数值计算。
+- `platform/` 隔离 `wx`、`tt` 和编辑器模拟；平台回调先归一化，再通知业务层。
+- `config/` 只提供类型化静态数据，不反向依赖场景节点和运行时服务。
+- `bundles/`、远程资源和后端目录属于条件能力，只有 PRD 批准后才进入依赖图。
 
 ## 场景与生命周期
 
