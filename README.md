@@ -7,7 +7,7 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Spec-6366F1?style=for-the-badge&logo=openai&logoColor=white)](https://agentskills.io)
 [![Skills CLI](https://img.shields.io/badge/CLI-npx%20skills-0EA5E9?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-6-F59E0B?style=for-the-badge)](./skills/)
+[![Skills](https://img.shields.io/badge/Skills-7-F59E0B?style=for-the-badge)](./skills/)
 [![llms.txt](https://img.shields.io/badge/llms.txt-Navigation-64748B?style=for-the-badge)](./llms.txt)
 [![Stars](https://img.shields.io/github/stars/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Stars&color=181717)](https://github.com/xiongxianzhu/xskills/stargazers)
 [![Forks](https://img.shields.io/github/forks/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Forks&color=181717)](https://github.com/xiongxianzhu/xskills/forks)
@@ -25,6 +25,7 @@
 ```bash
 npx skills add xiongxianzhu/xskills --list
 npx skills add xiongxianzhu/xskills --skill api-docs -g -y
+npx skills add xiongxianzhu/xskills --skill cocos-mini-game -g -y
 npx skills add xiongxianzhu/xskills --skill write-wechat-articles -g -y
 npx skills list -g
 ```
@@ -40,6 +41,7 @@ npx skills list -g
 | [`agnes-image`](./skills/agnes-image/SKILL.md) | Agnes Image 文生图 / 图生图 | [API](./skills/agnes-image/references/api.md) |
 | [`agnes-video`](./skills/agnes-video/SKILL.md) | Agnes Video 文生 / 图生 / 关键帧 | [API](./skills/agnes-video/references/api.md) |
 | [`dingtalk-log`](./skills/dingtalk-log/SKILL.md) | 口语任务润色为钉钉工作日志 | [说明](./skills/dingtalk-log/references/usage.md) |
+| [`cocos-mini-game`](./skills/cocos-mini-game/SKILL.md) | 从主题、PRD 和任务规划开始，开发微信/抖音双端 Cocos Creator 2D IAA 小游戏 | [PRD 模板](./skills/cocos-mini-game/references/prd-template.md) |
 | [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章，生成可复制的 HTML 富文本预览 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
 
 `write-wechat-articles` 会将文章保存到 `微信公众号文章/YYYY-MM-DD-短标题/`，并生成 `article.md`、`wechat.md`、`wechat.html` 和 `assets.md`。打开 `wechat.html`，点击“复制到公众号”后可直接粘贴到微信公众号编辑器。
