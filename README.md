@@ -61,6 +61,9 @@ npx skills list -g
 | 列出可装技能 | `npx skills add xiongxianzhu/xskills --list` |
 | 安装全部 | `npx skills add xiongxianzhu/xskills -g -y` |
 | 安装单个 | `npx skills add xiongxianzhu/xskills --skill api-docs -g -y` |
+| 更新全部 | `npx skills update -g -y` |
+| 更新单个 | `npx skills update api-docs -g -y` |
+| 检查更新 | `npx skills check` |
 | 指定 Cursor | `… --skill api-docs -a cursor -g -y` |
 | 本地已克隆 | `npx skills add . -g -y` |
 

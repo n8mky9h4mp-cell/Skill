@@ -15,6 +15,7 @@
 
 ## Skill 约定
 
+- 新增 Skill 在仓库根目录的 `skills/<技能名>/` 下创建。
 - Skill 目录名使用小写字母、数字和连字符。
 - 每个 Skill 必须包含 `SKILL.md`。
 - `SKILL.md` 的 YAML frontmatter 至少包含 `name` 和 `description`。
