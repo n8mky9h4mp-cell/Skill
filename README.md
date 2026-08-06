@@ -7,7 +7,7 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Spec-6366F1?style=for-the-badge&logo=openai&logoColor=white)](https://agentskills.io)
 [![Skills CLI](https://img.shields.io/badge/CLI-npx%20skills-0EA5E9?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-7-F59E0B?style=for-the-badge)](./skills/)
+[![Skills](https://img.shields.io/badge/Skills-22-F59E0B?style=for-the-badge)](./skills/)
 [![llms.txt](https://img.shields.io/badge/llms.txt-Navigation-64748B?style=for-the-badge)](./llms.txt)
 [![Stars](https://img.shields.io/github/stars/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Stars&color=181717)](https://github.com/xiongxianzhu/xskills/stargazers)
 [![Forks](https://img.shields.io/github/forks/xiongxianzhu/xskills?style=for-the-badge&logo=github&label=Forks&color=181717)](https://github.com/xiongxianzhu/xskills/forks)
@@ -43,8 +43,16 @@ npx skills list -g
 | [`dingtalk-log`](./skills/dingtalk-log/SKILL.md) | 口语任务润色为钉钉工作日志 | [说明](./skills/dingtalk-log/references/usage.md) |
 | [`cocos-mini-game`](./skills/cocos-mini-game/SKILL.md) | 从主题、PRD 和任务规划开始，开发微信/抖音双端 Cocos Creator 2D IAA 小游戏 | [PRD 模板](./skills/cocos-mini-game/references/prd-template.md) |
 | [`write-wechat-articles`](./skills/write-wechat-articles/SKILL.md) | 编写技术与 AI 创作实践公众号文章，生成可复制的 HTML 富文本预览 | [排版](./skills/write-wechat-articles/references/wechat-formatting.md) |
+| [`docs-writer`](./skills/docs-writer/SKILL.md) | 技术文档写作（README / API / 教程 / 变更日志），五原则 + 四类最小结构 | [模板](./skills/docs-writer/references/templates.md) · [风格](./skills/docs-writer/references/style-guide.md) |
 
 `write-wechat-articles` 会将文章保存到 `微信公众号文章/YYYY-MM-DD-短标题/`，并生成 `article.md`、`wechat.md`、`wechat.html` 和 `assets.md`。打开 `wechat.html`，点击“复制到公众号”后可直接粘贴到微信公众号编辑器。
+
+按领域分类的技能容器（catalog 布局，安装命令不变）：
+
+| 分类 | 数量 | 说明 |
+| --- | --- | --- |
+| [`ai-drama`](./skills/ai-drama/README.md) | 12 | AI 漫剧全链路：小说原作 → 文案 → 分镜 → 视频提示词 → 角色设定 |
+| [`ai-music`](./skills/ai-music/README.md) | 2 | AI 音乐：Suno 作词与配器、MV 分镜与视频提示词 |
 
 新建 Skill：复制 [`skills/_template/`](./skills/_template/SKILL.md)（`metadata.internal: true`，不会被一键安装）。
 
@@ -80,7 +88,6 @@ npx skills list -g
 | [find-skills](https://github.com/vercel-labs/skills) | 对话中发现、安装技能 |
 | [git-commit](https://skills.sh/github/awesome-copilot/git-commit) | 约定式提交；说 commit / push 触发提交与推送 |
 | [prd](https://skills.sh/github/awesome-copilot/prd) | 规范化 PRD（本仓库：[prd-creator](./skills/prd-creator/SKILL.md)） |
-| [to-prd](https://skills.sh/mattpocock/skills/to-prd) | 基于对话与代码库合成 PRD |
 | [stitch::extract-design-md](https://skills.sh/google-labs-code/stitch-skills/stitch::extract-design-md) | 从前端源码反推 DESIGN.md |
 | [git-branch-naming](https://github.com/laurigates/claude-plugins/tree/main/git-plugin/skills/git-branch-naming) | 分支命名规范 |
 | [design-taste-frontend](https://skills.sh/Leonxlnx/taste-skill/design-taste-frontend) | 反模板化落地页 / 作品集 |
@@ -101,7 +108,6 @@ npx skills add shadcn/ui --skill shadcn -g -y
 npx skills add vercel-labs/skills --skill find-skills -g -y
 npx skills add github/awesome-copilot --skill git-commit -g -y
 npx skills add github/awesome-copilot --skill prd -g -y
-npx skills add mattpocock/skills --skill to-prd -g -y
 npx skills add github/awesome-copilot --skill create-llms -g -y
 npx skills add github/awesome-copilot --skill update-llms -g -y
 npx skills add google-labs-code/stitch-skills --skill stitch::extract-design-md -g -y

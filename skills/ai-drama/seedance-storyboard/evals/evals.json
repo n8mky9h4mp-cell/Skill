@@ -1,0 +1,101 @@
+{
+  "skill_name": "seedance-storyboard",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我写一段 Seedance 2.0 分镜：9:16 竖屏，5 秒，古风女子在竹林回眸，治愈氛围，要工业级分镜和最终提示词",
+      "expected_output": "Markdown 含参数表、工业级分镜（镜头1/2）、≤2000字 Seedance 提示词，画幅 9:16，时长 5 秒，开头「画面无任何字幕」",
+      "files": [],
+      "assertions": [
+        {
+          "text": "最终提示词块字数 ≤ 2000",
+          "type": "char_limit"
+        },
+        {
+          "text": "包含「画面无任何字幕」",
+          "type": "contains"
+        },
+        {
+          "text": "包含画幅 9:16",
+          "type": "contains"
+        },
+        {
+          "text": "包含时长 5秒",
+          "type": "contains"
+        },
+        {
+          "text": "使用镜头1/镜头2 编号格式",
+          "type": "contains"
+        },
+        {
+          "text": "无严禁/禁止/不要等负面词",
+          "type": "no_negative_words"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "用 Seedance 2.0 格式写分镜脚本：16:9 横屏，12 秒，赛博朋克雨夜巷道中男子被追逐，3-4 个镜头，有一句对白「他们来了」，输出工业分镜+可拷贝提示词",
+      "expected_output": "横屏 16:9、12 秒、3-4 镜工业分镜，含对白，最终提示词 ≤2000 字",
+      "files": [],
+      "assertions": [
+        {
+          "text": "最终提示词块字数 ≤ 2000",
+          "type": "char_limit"
+        },
+        {
+          "text": "包含「画面无任何字幕」",
+          "type": "contains"
+        },
+        {
+          "text": "包含画幅 16:9",
+          "type": "contains"
+        },
+        {
+          "text": "包含时长 12秒",
+          "type": "contains"
+        },
+        {
+          "text": "包含对白「他们来了」或 {他们来了}",
+          "type": "contains"
+        },
+        {
+          "text": "无严禁/禁止/不要等负面词",
+          "type": "no_negative_words"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "生成 Seedance 2.0 分镜：16:9，15 秒，BBC 纪录片质感瀑布日出航拍，纯环境无人物，史诗自然风光，要完整工业分镜和提示词",
+      "expected_output": "15 秒横屏环境片，4+ 镜，无人物，纪录片质感，≤2000 字提示词",
+      "files": [],
+      "assertions": [
+        {
+          "text": "最终提示词块字数 ≤ 2000",
+          "type": "char_limit"
+        },
+        {
+          "text": "包含「画面无任何字幕」",
+          "type": "contains"
+        },
+        {
+          "text": "包含画幅 16:9",
+          "type": "contains"
+        },
+        {
+          "text": "包含时长 15秒",
+          "type": "contains"
+        },
+        {
+          "text": "使用镜头编号格式（镜头1）",
+          "type": "contains"
+        },
+        {
+          "text": "无严禁/禁止/不要等负面词",
+          "type": "no_negative_words"
+        }
+      ]
+    }
+  ]
+}
