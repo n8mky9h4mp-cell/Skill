@@ -1,13 +1,13 @@
 # xskills
 
-> 个人维护的 Agent Skills 与提示词集合：22 个 Skill 位于 `skills/`（按领域分扁平与 catalog 两类布局），按需使用的 Prompt 位于 `prompts/`，配合 `npx skills` CLI 安装 Skill 到 Cursor、Claude Code 等智能体全局目录。
+> 个人维护的 Agent Skills 与提示词集合：23 个 Skill 位于 `skills/`（按领域分扁平与 catalog 两类布局），按需使用的 Prompt 位于 `prompts/`，配合 `npx skills` CLI 安装 Skill 到 Cursor、Claude Code 等智能体全局目录。
 
 本仓库**不含应用业务代码**。Skill 以 **`SKILL.md` 入口**与 **references/** 为主；提示词为普通 Markdown，手动复制使用。入口说明见 [README](README.md)。
 
 ## Documentation
 
-- [README](README.md): 仓库说明、Skill 目录约定、`npx skills add xiongxianzhu/xskills --list` 列出可装技能、安装方式、本仓库 22 个技能与外部推荐技能、`LICENSE` 入口
-- [AI 漫剧技能分类索引](skills/ai-drama/README.md): ai-drama 容器，12 个 skill 按剧本/分镜/角色设定分组，含工作流概览
+- [README](README.md): 仓库说明、Skill 目录约定、`npx skills add xiongxianzhu/xskills --list` 列出可装技能、安装方式、本仓库 24 个技能与外部推荐技能、`LICENSE` 入口
+- [AI 漫剧技能分类索引](skills/ai-drama/README.md): ai-drama 容器，14 个 skill 按剧本/分镜/角色设定分组，含工作流概览
 - [AI 音乐技能分类索引](skills/ai-music/README.md): ai-music 容器，2 个 skill，含工作流概览
 - [api-docs Skill 入口](skills/api-docs/SKILL.md): API 文档技能的使用场景与工作流索引
 - [prd-creator Skill 入口](skills/prd-creator/SKILL.md): PRD / 需求文档技能的使用场景与工作流索引
@@ -16,6 +16,7 @@
 - [dingtalk-log Skill 入口](skills/dingtalk-log/SKILL.md): 钉钉工作日志生成；口语任务润色为正式编号列表
 - [cocos-mini-game Skill 入口](skills/cocos-mini-game/SKILL.md): 从主题调研、玩法提案、PRD 和任务规划开始，直接实施 Cocos Creator 3.8+ 微信/抖音双端 2D IAA 小游戏
 - [write-wechat-articles Skill 入口](skills/write-wechat-articles/SKILL.md): 编写简洁的技术、AI 创作实践与提示词分享公众号文章，并生成可复制的 HTML 富文本预览
+- [docs-writer Skill 入口](skills/docs-writer/SKILL.md): 技术文档写作（README / API / 教程 / 变更日志），五原则 + 四类最小结构
 - [ai-novel-writer Skill 入口](skills/ai-drama/ai-novel-writer/SKILL.md): 创作、续写、修改适合改编为 AI 漫剧的中文小说，保存作品/角色/大纲/章节与漫剧改编资料
 - [novel-to-script Skill 入口](skills/ai-drama/novel-to-script/SKILL.md): 小说改编为视频分镜脚本，含角色卡、场景拆分、画面提示词、声音标注
 - [manju-short-video-polish Skill 入口](skills/ai-drama/manju-short-video-polish/SKILL.md): 小说原文润色为漫剧短视频文案（第一人称、黄金钩子、高完播）
@@ -28,6 +29,8 @@
 - [guofeng-beauty-turnaround Skill 入口](skills/ai-drama/guofeng-beauty-turnaround/SKILL.md): 古风美女四视图设定板提示词，16:9，8+ 种古风风格
 - [guofeng-handsome-male-turnaround Skill 入口](skills/ai-drama/guofeng-handsome-male-turnaround/SKILL.md): 古风帅气男主四视图设定板提示词，16:9
 - [guofeng-character-3d-sheet Skill 入口](skills/ai-drama/guofeng-character-3d-sheet/SKILL.md): 超写实 3D 国漫 CG 角色四视图设定板提示词
+- [chibi-character-redraw Skill 入口](skills/ai-drama/chibi-character-redraw/SKILL.md): 任意参考角色 Q 版轻写实（3 头身、白底、收藏级手办）重绘提示词，严格锁定原角色识别度
+- [character-design-board Skill 入口](skills/ai-drama/character-design-board/SKILL.md): 横版角色设定板（黑金版式 + 主肖像 + 三视图 + 多细节栏目，16:9 收藏级设定稿）
 - [suno-lyric-creator Skill 入口](skills/ai-music/suno-lyric-creator/SKILL.md): 面向 Suno AI 的全曲风歌曲与纯音乐创作，含歌词、Prompt、配器、查重
 - [music-mv-storyboard Skill 入口](skills/ai-music/music-mv-storyboard/SKILL.md): 根据歌曲信息生成覆盖整首歌的 MV 分镜与 Seedance / 即梦视频提示词
 - [提示词库索引](prompts/README.md): 按需手动使用的 Prompt 分类与新增说明
@@ -77,6 +80,8 @@
 - [即梦合规约束](skills/ai-drama/seedance-storyboard/references/compliance-jimeng.md): 即梦内容审核与提示词合规边界
 - [古风美女风格库](skills/ai-drama/guofeng-beauty-turnaround/references/style-library.md): 仙侠、敦煌、江南等 8+ 种古风风格定义
 - [古风男主风格库](skills/ai-drama/guofeng-handsome-male-turnaround/references/style-library.md): 古风男性角色风格与配饰定义
+- [Q 版角色一致性锁定](skills/ai-drama/chibi-character-redraw/references/identity-lock.md): 脸/眼/眉/嘴/妆/气质/发/纹理等识别特征锁定规则
+- [Q 版轻写实风格规范](skills/ai-drama/chibi-character-redraw/references/style-specs.md): 3 头身比例、轻写实 CG、光影色彩、画面基础与 Negative Prompt
 - [Suno 曲风矩阵](skills/ai-music/suno-lyric-creator/references/genre-matrix.md): 18+ 曲风的特征、BPM、配器与人声
 - [Suno 歌曲结构](skills/ai-music/suno-lyric-creator/references/song-structures.md): 主歌/副歌/桥段/前奏/尾奏的结构模板
 - [Suno Prompt 公式](skills/ai-music/suno-lyric-creator/references/prompt-formula.md): 英文 Prompt 的字段、顺序与写法

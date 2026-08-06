@@ -16,12 +16,14 @@
 ## Skill 约定
 
 - 新增 Skill 在仓库根目录的 `skills/<技能名>/` 下创建。
+- AI 漫剧相关 Skill 放在 `skills/ai-drama/`，AI 音乐相关 Skill 放在 `skills/ai-music/`；其他通用 Skill 放在 `skills/<技能名>/` 扁平布局。
 - Skill 目录名使用小写字母、数字和连字符。
 - 每个 Skill 必须包含 `SKILL.md`。
 - `SKILL.md` 的 YAML frontmatter 至少包含 `name` 和 `description`。
 - 将核心流程保留在 `SKILL.md`，详细规范按需放入 `references/`。
 - 只有可重复、需要确定性执行的逻辑才放入 `scripts/`。
 - 不在 Skill 目录中新增 README、变更日志或重复说明文档。
+- Skill 之间相互独立。不要在 Skill 内引用其他 Skill 的文件；如需指向，用纯文本名称。
 - 新增、删除或重命名 Skill 时，同步更新 `README.md` 和 `llms.txt` 的数量与索引。
 
 ## 修改原则
