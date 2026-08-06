@@ -25,6 +25,8 @@
 ```bash
 npx skills add xiongxianzhu/xskills --list
 npx skills add xiongxianzhu/xskills --skill api-docs -g -y
+npx skills add xiongxianzhu/xskills --skill prd-creator -g -y
+npx skills add xiongxianzhu/xskills --skill docs-writer -g -y
 npx skills add xiongxianzhu/xskills --skill cocos-mini-game -g -y
 npx skills add xiongxianzhu/xskills --skill write-wechat-articles -g -y
 npx skills list -g
