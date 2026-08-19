@@ -1,0 +1,28 @@
+{
+  "name": "pexo",
+  "owner": {
+    "name": "Pexo",
+    "url": "https://pexo.ai"
+  },
+  "metadata": {
+    "description": "AI video generation skills with automatic model selection across 10+ engines.",
+    "version": "0.3.12"
+  },
+  "plugins": [
+    {
+      "name": "pexo",
+      "description": "AI video generation — describe what you want, Pexo picks the best model across 10+ engines (Seedance, Kling, Veo, Sora) and returns a finished, multi-shot video with music, subtitles, and transitions. Includes the Pexo agent plus image, audio, director, and model-prompting skills.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/pexo-agent",
+        "./skills/videoagent-video-studio",
+        "./skills/videoagent-image-studio",
+        "./skills/videoagent-audio-studio",
+        "./skills/videoagent-director",
+        "./skills/seedance-2.0-prompter",
+        "./skills/veo-3.2-prompter"
+      ]
+    }
+  ]
+}

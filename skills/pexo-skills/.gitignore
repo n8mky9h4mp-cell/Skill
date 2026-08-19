@@ -1,0 +1,5 @@
+node_modules/
+.env
+.vercel/
+**/scripts/server.log
+.private-infra/
